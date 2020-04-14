@@ -1,0 +1,1089 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CPAMIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ConnectingPipe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="CPI_NUM" Type="varchar" MaxLength="30" />
+          <Property Name="IN_MHNUM" Type="varchar" MaxLength="30" />
+          <Property Name="IN_PINUM" Type="varchar" MaxLength="50" />
+          <Property Name="CPI_WID" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="CPI_HEI" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="CPI_LENG" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="PI_MAT" Type="varchar" MaxLength="30" />
+          <Property Name="US_BLE" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="IN_TDIS" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="CONS_ID" Type="varchar" MaxLength="30" />
+          <Property Name="CITY_ID" Type="varchar" MaxLength="10" />
+          <Property Name="NOTE" Type="nvarchar(max)" />
+          <Property Name="NOTE2" Type="nvarchar(max)" />
+          <Property Name="NOTE3" Type="nvarchar(max)" />
+          <Property Name="ImportDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ContentData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kind" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="city" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="step" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="planName" Type="nvarchar" MaxLength="50" />
+          <Property Name="textInfo" Type="nvarchar" MaxLength="1000" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ContentImg">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kind" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="city" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="step" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="planName" Type="nvarchar" MaxLength="50" />
+          <Property Name="images" Type="image" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GIsMenu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityId" Type="varchar" MaxLength="3" />
+          <Property Name="CITY_ID" Type="int" />
+          <Property Name="townId" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="Text" Type="varchar" MaxLength="100" />
+          <Property Name="GroupId" Type="varchar" MaxLength="50" />
+          <Property Name="isShow" Type="bit" />
+        </EntityType>
+        <EntityType Name="PipeCableAttach">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="P_NO" Type="varchar" MaxLength="50" />
+          <Property Name="CHART_NO" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_ID" Type="varchar" MaxLength="30" />
+          <Property Name="MSHED" Type="varchar" MaxLength="50" />
+          <Property Name="DIS_STMH" Type="varchar" MaxLength="30" />
+          <Property Name="DIS_NUM" Type="varchar" MaxLength="30" />
+          <Property Name="STATEM" Type="varchar" MaxLength="300" />
+          <Property Name="INV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="INV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_OK" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="PICTURE" Type="varchar" MaxLength="30" />
+          <Property Name="MEMO" Type="varchar" MaxLength="30" />
+          <Property Name="ImportDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PipeCross">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="P_NO" Type="varchar" MaxLength="30" />
+          <Property Name="CHART_NO" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_ID" Type="varchar" MaxLength="30" />
+          <Property Name="MSHED" Type="varchar" MaxLength="30" />
+          <Property Name="DIS_STMH" Type="varchar" MaxLength="30" />
+          <Property Name="DIS_NUM" Type="varchar" MaxLength="30" />
+          <Property Name="DIS_TOP" Type="varchar" MaxLength="30" />
+          <Property Name="CROSS_TP" Type="varchar" MaxLength="30" />
+          <Property Name="STATEM" Type="varchar" MaxLength="300" />
+          <Property Name="INV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="INV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_OK" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="PICTURE" Type="varchar" MaxLength="30" />
+          <Property Name="VIDEO" Type="varchar" MaxLength="30" />
+          <Property Name="CLASS" Type="varchar" MaxLength="30" />
+          <Property Name="MEMO" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PipeOther">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="P_NO" Type="varchar" MaxLength="50" />
+          <Property Name="CHART_NO" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_ID" Type="varchar" MaxLength="30" />
+          <Property Name="MSHED" Type="varchar" MaxLength="30" />
+          <Property Name="DIS_STMH" Type="varchar" MaxLength="30" />
+          <Property Name="DIS_NUM" Type="varchar" MaxLength="50" />
+          <Property Name="STATEM" Type="varchar" MaxLength="300" />
+          <Property Name="INV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="INV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_OK" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="PICTURE" Type="varchar" MaxLength="30" />
+          <Property Name="VIDEO" Type="varchar" MaxLength="30" />
+          <Property Name="CLASS" Type="varchar" MaxLength="30" />
+          <Property Name="MEMO" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PipeSilt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="P_NO" Type="varchar" MaxLength="50" />
+          <Property Name="CHART_NO" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_ID" Type="varchar" MaxLength="30" />
+          <Property Name="MSHED" Type="varchar" MaxLength="50" />
+          <Property Name="DIS_STMH" Type="varchar" MaxLength="30" />
+          <Property Name="DIS_NUM" Type="varchar" MaxLength="50" />
+          <Property Name="SEDI_DH" Type="varchar" MaxLength="30" />
+          <Property Name="FD_DEPTH" Type="varchar" MaxLength="30" />
+          <Property Name="INV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="INV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_OK" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="PICTURE" Type="varchar" MaxLength="30" />
+          <Property Name="VIDEO" Type="varchar" MaxLength="30" />
+          <Property Name="CLASS" Type="varchar" MaxLength="30" />
+          <Property Name="MEMO" Type="varchar" MaxLength="50" />
+          <Property Name="ImportDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PipeUnableWalk">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="P_NO" Type="nvarchar" MaxLength="30" />
+          <Property Name="CHART_NO" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="TOWN_ID" Type="varchar" MaxLength="30" />
+          <Property Name="MSHED" Type="varchar" MaxLength="50" />
+          <Property Name="DIS_STMH" Type="varchar" MaxLength="30" />
+          <Property Name="DIS_NUM" Type="varchar" MaxLength="50" />
+          <Property Name="STATEM" Type="varchar" MaxLength="300" />
+          <Property Name="INV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="INV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_OK" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="DEV_GRP" Type="varchar" MaxLength="30" />
+          <Property Name="PICTURE" Type="varchar" MaxLength="30" />
+          <Property Name="MEMO" Type="varchar" MaxLength="300" />
+          <Property Name="ImportDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RainCompletedManhole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="MH_NUM" Type="varchar" MaxLength="30" />
+          <Property Name="X" Type="varchar(max)" />
+          <Property Name="Y" Type="varchar(max)" />
+          <Property Name="ROAD_NAME" Type="nvarchar(max)" />
+          <Property Name="MH_DEP" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="MH_TYP" Type="nvarchar" MaxLength="4" />
+          <Property Name="MH_CLASS" Type="nvarchar" MaxLength="50" />
+          <Property Name="MH_LENG" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="MH_WID" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="ROAD_WID" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="FALL_MAX" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="MH_TLE" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="CONS_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="CITY_ID" Type="varchar" MaxLength="10" />
+          <Property Name="CONS_ID" Type="varchar" MaxLength="30" />
+          <Property Name="CONS_TIT" Type="varchar(max)" />
+          <Property Name="CONS_DEPT" Type="varchar(max)" />
+          <Property Name="CONS_NAME" Type="varchar(max)" />
+          <Property Name="KEYIN_DATE" Type="varchar" MaxLength="50" />
+          <Property Name="MH_PIC" Type="varchar(max)" />
+          <Property Name="MH_EXVIEW" Type="varchar(max)" />
+          <Property Name="MH_MARK" Type="varchar(max)" />
+          <Property Name="NOTE" Type="nvarchar(max)" />
+          <Property Name="ImportDate" Type="datetime" />
+          <Property Name="Wgs84X" Type="varchar(max)" />
+          <Property Name="Wgs84Y" Type="varchar(max)" />
+          <Property Name="coordinate" Type="geometry" />
+        </EntityType>
+        <EntityType Name="RainCompletedPipeline">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="SSEW_CAT" Type="varchar" MaxLength="1" />
+          <Property Name="PI_NUM" Type="varchar(max)" />
+          <Property Name="US_MH" Type="varchar" MaxLength="30" />
+          <Property Name="DS_MH" Type="varchar" MaxLength="30" />
+          <Property Name="PI_TYP" Type="varchar" MaxLength="2" />
+          <Property Name="PI_CLASS" Type="varchar" MaxLength="30" />
+          <Property Name="PI_WIDT" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="PI_WIDB" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="PI_HEI" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="PI_LENG" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="PI_MAT" Type="varchar" MaxLength="30" />
+          <Property Name="PI_SLOP" Type="numeric" Precision="7" Scale="5" />
+          <Property Name="DES_FLOW" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="DES_VELO" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="US_BLE" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="DS_BLE" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="CATCH_NUM" Type="varchar" MaxLength="30" />
+          <Property Name="CITY_ID" Type="varchar" MaxLength="10" />
+          <Property Name="CONS_ID" Type="varchar(max)" />
+          <Property Name="CONS_TIT" Type="varchar(max)" />
+          <Property Name="CONS_DEPT" Type="varchar(max)" />
+          <Property Name="CONS_NAME" Type="varchar(max)" />
+          <Property Name="CONS_DATE" Type="date" />
+          <Property Name="KEYIN_DATE" Type="date" />
+          <Property Name="NOTE" Type="nvarchar(max)" />
+          <Property Name="US_X" Type="varchar(max)" />
+          <Property Name="US_Y" Type="varchar(max)" />
+          <Property Name="DS_X" Type="varchar(max)" />
+          <Property Name="DS_Y" Type="varchar(max)" />
+          <Property Name="ImportDate" Type="datetime" />
+          <Property Name="US_84X" Type="varchar(max)" />
+          <Property Name="US_84Y" Type="varchar(max)" />
+          <Property Name="DS_84X" Type="varchar(max)" />
+          <Property Name="DS_84Y" Type="varchar(max)" />
+          <Property Name="coordinate" Type="geometry" />
+        </EntityType>
+        <EntityType Name="RainwaterDitch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="SPI_TYP" Type="varchar" MaxLength="2" />
+          <Property Name="SPI_NUM" Type="varchar(max)" />
+          <Property Name="STR_X" Type="varchar(max)" />
+          <Property Name="STR_Y" Type="varchar(max)" />
+          <Property Name="STR_LE" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="END_X" Type="varchar(max)" />
+          <Property Name="END_Y" Type="varchar(max)" />
+          <Property Name="END_LE" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="STR_DEP" Type="numeric" Precision="7" Scale="0" />
+          <Property Name="END_DEP" Type="numeric" Precision="7" Scale="0" />
+          <Property Name="STR_WID" Type="numeric" Precision="7" Scale="0" />
+          <Property Name="END_WID" Type="numeric" Precision="7" Scale="0" />
+          <Property Name="LENG" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="SLOP" Type="numeric" Precision="7" Scale="5" />
+          <Property Name="CATCH_NUM" Type="varchar" MaxLength="50" />
+          <Property Name="KEYIN_DATE" Type="date" />
+          <Property Name="CONS_DATE" Type="varchar" MaxLength="30" />
+          <Property Name="NOTE" Type="nvarchar(max)" />
+          <Property Name="ImportDate" Type="datetime" />
+          <Property Name="STR_84X" Type="varchar(max)" />
+          <Property Name="STR_84Y" Type="varchar(max)" />
+          <Property Name="END_84X" Type="varchar(max)" />
+          <Property Name="END_84Y" Type="varchar(max)" />
+          <Property Name="coordinate" Type="geometry" />
+        </EntityType>
+        <EntityType Name="SetWells">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="targetId" Type="int" />
+          <Property Name="CP_NUM" Type="varchar" MaxLength="50" />
+          <Property Name="X" Type="varchar(max)" />
+          <Property Name="Y" Type="varchar(max)" />
+          <Property Name="CP_BLE" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="CP_DEP" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="CP_LENG" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="CP_WID" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="IN_CPNUM" Type="varchar" MaxLength="50" />
+          <Property Name="CONS_ID" Type="varchar" MaxLength="30" />
+          <Property Name="CITY_ID" Type="varchar" MaxLength="10" />
+          <Property Name="NOTE" Type="nvarchar(max)" />
+          <Property Name="ImportDate" Type="datetime" />
+          <Property Name="Wgs84X" Type="varchar(max)" />
+          <Property Name="Wgs84Y" Type="varchar(max)" />
+          <Property Name="coordinate" Type="geometry" />
+        </EntityType>
+        <EntityType Name="TableColumnText">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ColName" Type="varchar" MaxLength="50" />
+          <Property Name="ColNameChi" Type="varchar" MaxLength="100" />
+          <Property Name="TableNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TaiwanCode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="10" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="ParentId" Type="varchar" MaxLength="10" />
+          <Property Name="WGS84_X" Type="varchar" MaxLength="50" />
+          <Property Name="WGS84_Y" Type="varchar" MaxLength="50" />
+          <Property Name="Polygon" Type="geometry" />
+        </EntityType>
+        <EntityContainer Name="CPAMIModelStoreContainer">
+          <EntitySet Name="ConnectingPipe" EntityType="Self.ConnectingPipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContentData" EntityType="Self.ContentData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContentImg" EntityType="Self.ContentImg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIsMenu" EntityType="Self.GIsMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PipeCableAttach" EntityType="Self.PipeCableAttach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PipeCross" EntityType="Self.PipeCross" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PipeOther" EntityType="Self.PipeOther" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PipeSilt" EntityType="Self.PipeSilt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PipeUnableWalk" EntityType="Self.PipeUnableWalk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RainCompletedManhole" EntityType="Self.RainCompletedManhole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RainCompletedPipeline" EntityType="Self.RainCompletedPipeline" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RainwaterDitch" EntityType="Self.RainwaterDitch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SetWells" EntityType="Self.SetWells" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableColumnText" EntityType="Self.TableColumnText" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaiwanCode" EntityType="Self.TaiwanCode" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CPAMIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ConnectingPipe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="CPI_NUM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IN_MHNUM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IN_PINUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPI_WID" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="CPI_HEI" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="CPI_LENG" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="PI_MAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="US_BLE" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="IN_TDIS" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="CONS_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CITY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NOTE2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NOTE3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ContentData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="step" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="planName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="textInfo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ContentImg">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="step" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="planName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="images" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="GIsMenu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityId" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="CITY_ID" Type="Int32" />
+          <Property Name="townId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GroupId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isShow" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PipeCableAttach">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="P_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHART_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MSHED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_STMH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_NUM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="STATEM" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="INV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_OK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PICTURE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PipeCross">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="P_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CHART_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MSHED" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_STMH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_NUM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_TOP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CROSS_TP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="STATEM" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="INV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_OK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PICTURE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PipeOther">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="P_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHART_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MSHED" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_STMH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STATEM" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="INV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_OK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PICTURE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PipeSilt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="P_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CHART_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MSHED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_STMH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SEDI_DH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FD_DEPTH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_OK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PICTURE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PipeUnableWalk">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="P_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CHART_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TOWN_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MSHED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_STMH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DIS_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STATEM" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="INV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_OK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DEV_GRP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PICTURE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="RainCompletedManhole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="MH_NUM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ROAD_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MH_DEP" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="MH_TYP" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="MH_CLASS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MH_LENG" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="MH_WID" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="ROAD_WID" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="FALL_MAX" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="MH_TLE" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="CONS_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CITY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_TIT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_DEPT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KEYIN_DATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MH_PIC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MH_EXVIEW" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MH_MARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+          <Property Name="Wgs84X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Wgs84Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="coordinate" Type="Geometry" />
+        </EntityType>
+        <EntityType Name="RainCompletedPipeline">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="SSEW_CAT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PI_NUM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="US_MH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DS_MH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PI_TYP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PI_CLASS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PI_WIDT" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="PI_WIDB" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="PI_HEI" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="PI_LENG" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="PI_MAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PI_SLOP" Type="Decimal" Precision="7" Scale="5" />
+          <Property Name="DES_FLOW" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="DES_VELO" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="US_BLE" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="DS_BLE" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="CATCH_NUM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CITY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_TIT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_DEPT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_DATE" Type="DateTime" Precision="0" />
+          <Property Name="KEYIN_DATE" Type="DateTime" Precision="0" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="US_X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="US_Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DS_X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DS_Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+          <Property Name="US_84X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="US_84Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DS_84X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DS_84Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="coordinate" Type="Geometry" />
+        </EntityType>
+        <EntityType Name="RainwaterDitch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="SPI_TYP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SPI_NUM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="STR_X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="STR_Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="STR_LE" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="END_X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="END_Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="END_LE" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="STR_DEP" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="END_DEP" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="STR_WID" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="END_WID" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="LENG" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="SLOP" Type="Decimal" Precision="7" Scale="5" />
+          <Property Name="CATCH_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KEYIN_DATE" Type="DateTime" Precision="0" />
+          <Property Name="CONS_DATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+          <Property Name="STR_84X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="STR_84Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="END_84X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="END_84Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="coordinate" Type="Geometry" />
+        </EntityType>
+        <EntityType Name="SetWells">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="targetId" Type="Int32" />
+          <Property Name="CP_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CP_BLE" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="CP_DEP" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="CP_LENG" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="CP_WID" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="IN_CPNUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CITY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImportDate" Type="DateTime" Precision="3" />
+          <Property Name="Wgs84X" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Wgs84Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="coordinate" Type="Geometry" />
+        </EntityType>
+        <EntityType Name="TableColumnText">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColNameChi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TableNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CPAMIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ConnectingPipe" EntityType="Self.ConnectingPipe" />
+          <EntitySet Name="ContentData" EntityType="Self.ContentData" />
+          <EntitySet Name="ContentImg" EntityType="Self.ContentImg" />
+          <EntitySet Name="GIsMenu" EntityType="Self.GIsMenu" />
+          <EntitySet Name="PipeCableAttach" EntityType="Self.PipeCableAttach" />
+          <EntitySet Name="PipeCross" EntityType="Self.PipeCross" />
+          <EntitySet Name="PipeOther" EntityType="Self.PipeOther" />
+          <EntitySet Name="PipeSilt" EntityType="Self.PipeSilt" />
+          <EntitySet Name="PipeUnableWalk" EntityType="Self.PipeUnableWalk" />
+          <EntitySet Name="RainCompletedManhole" EntityType="Self.RainCompletedManhole" />
+          <EntitySet Name="RainCompletedPipeline" EntityType="Self.RainCompletedPipeline" />
+          <EntitySet Name="RainwaterDitch" EntityType="Self.RainwaterDitch" />
+          <EntitySet Name="SetWells" EntityType="Self.SetWells" />
+          <EntitySet Name="TableColumnText" EntityType="Self.TableColumnText" />
+          <EntitySet Name="TaiwanCode" EntityType="CPAMIModel.TaiwanCode" />
+        </EntityContainer>
+        <EntityType Name="TaiwanCode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="WGS84_X" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WGS84_Y" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Polygon" Type="Geometry" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CPAMIModelStoreContainer" CdmEntityContainer="CPAMIEntities">
+          <EntitySetMapping Name="ConnectingPipe">
+            <EntityTypeMapping TypeName="CPAMIModel.ConnectingPipe">
+              <MappingFragment StoreEntitySet="ConnectingPipe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="CPI_NUM" ColumnName="CPI_NUM" />
+                <ScalarProperty Name="IN_MHNUM" ColumnName="IN_MHNUM" />
+                <ScalarProperty Name="IN_PINUM" ColumnName="IN_PINUM" />
+                <ScalarProperty Name="CPI_WID" ColumnName="CPI_WID" />
+                <ScalarProperty Name="CPI_HEI" ColumnName="CPI_HEI" />
+                <ScalarProperty Name="CPI_LENG" ColumnName="CPI_LENG" />
+                <ScalarProperty Name="PI_MAT" ColumnName="PI_MAT" />
+                <ScalarProperty Name="US_BLE" ColumnName="US_BLE" />
+                <ScalarProperty Name="IN_TDIS" ColumnName="IN_TDIS" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+                <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="NOTE2" ColumnName="NOTE2" />
+                <ScalarProperty Name="NOTE3" ColumnName="NOTE3" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentData">
+            <EntityTypeMapping TypeName="CPAMIModel.ContentData">
+              <MappingFragment StoreEntitySet="ContentData">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="step" ColumnName="step" />
+                <ScalarProperty Name="planName" ColumnName="planName" />
+                <ScalarProperty Name="textInfo" ColumnName="textInfo" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentImg">
+            <EntityTypeMapping TypeName="CPAMIModel.ContentImg">
+              <MappingFragment StoreEntitySet="ContentImg">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="step" ColumnName="step" />
+                <ScalarProperty Name="planName" ColumnName="planName" />
+                <ScalarProperty Name="images" ColumnName="images" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIsMenu">
+            <EntityTypeMapping TypeName="CPAMIModel.GIsMenu">
+              <MappingFragment StoreEntitySet="GIsMenu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+                <ScalarProperty Name="townId" ColumnName="townId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="isShow" ColumnName="isShow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PipeCableAttach">
+            <EntityTypeMapping TypeName="CPAMIModel.PipeCableAttach">
+              <MappingFragment StoreEntitySet="PipeCableAttach">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+                <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+                <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+                <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+                <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+                <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+                <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+                <ScalarProperty Name="STATEM" ColumnName="STATEM" />
+                <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+                <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+                <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+                <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+                <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PipeCross">
+            <EntityTypeMapping TypeName="CPAMIModel.PipeCross">
+              <MappingFragment StoreEntitySet="PipeCross">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+                <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+                <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+                <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+                <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+                <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+                <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+                <ScalarProperty Name="DIS_TOP" ColumnName="DIS_TOP" />
+                <ScalarProperty Name="CROSS_TP" ColumnName="CROSS_TP" />
+                <ScalarProperty Name="STATEM" ColumnName="STATEM" />
+                <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+                <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+                <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+                <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+                <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+                <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PipeOther">
+            <EntityTypeMapping TypeName="CPAMIModel.PipeOther">
+              <MappingFragment StoreEntitySet="PipeOther">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+                <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+                <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+                <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+                <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+                <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+                <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+                <ScalarProperty Name="STATEM" ColumnName="STATEM" />
+                <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+                <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+                <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+                <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+                <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+                <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PipeSilt">
+            <EntityTypeMapping TypeName="CPAMIModel.PipeSilt">
+              <MappingFragment StoreEntitySet="PipeSilt">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+                <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+                <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+                <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+                <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+                <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+                <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+                <ScalarProperty Name="SEDI_DH" ColumnName="SEDI_DH" />
+                <ScalarProperty Name="FD_DEPTH" ColumnName="FD_DEPTH" />
+                <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+                <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+                <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+                <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+                <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+                <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PipeUnableWalk">
+            <EntityTypeMapping TypeName="CPAMIModel.PipeUnableWalk">
+              <MappingFragment StoreEntitySet="PipeUnableWalk">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+                <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+                <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+                <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+                <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+                <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+                <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+                <ScalarProperty Name="STATEM" ColumnName="STATEM" />
+                <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+                <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+                <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+                <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+                <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RainCompletedManhole">
+            <EntityTypeMapping TypeName="CPAMIModel.RainCompletedManhole">
+              <MappingFragment StoreEntitySet="RainCompletedManhole">
+                <ScalarProperty Name="coordinate" ColumnName="coordinate" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="MH_NUM" ColumnName="MH_NUM" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="ROAD_NAME" ColumnName="ROAD_NAME" />
+                <ScalarProperty Name="MH_DEP" ColumnName="MH_DEP" />
+                <ScalarProperty Name="MH_TYP" ColumnName="MH_TYP" />
+                <ScalarProperty Name="MH_CLASS" ColumnName="MH_CLASS" />
+                <ScalarProperty Name="MH_LENG" ColumnName="MH_LENG" />
+                <ScalarProperty Name="MH_WID" ColumnName="MH_WID" />
+                <ScalarProperty Name="ROAD_WID" ColumnName="ROAD_WID" />
+                <ScalarProperty Name="FALL_MAX" ColumnName="FALL_MAX" />
+                <ScalarProperty Name="MH_TLE" ColumnName="MH_TLE" />
+                <ScalarProperty Name="CONS_DATE" ColumnName="CONS_DATE" />
+                <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+                <ScalarProperty Name="CONS_TIT" ColumnName="CONS_TIT" />
+                <ScalarProperty Name="CONS_DEPT" ColumnName="CONS_DEPT" />
+                <ScalarProperty Name="CONS_NAME" ColumnName="CONS_NAME" />
+                <ScalarProperty Name="KEYIN_DATE" ColumnName="KEYIN_DATE" />
+                <ScalarProperty Name="MH_PIC" ColumnName="MH_PIC" />
+                <ScalarProperty Name="MH_EXVIEW" ColumnName="MH_EXVIEW" />
+                <ScalarProperty Name="MH_MARK" ColumnName="MH_MARK" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="Wgs84X" ColumnName="Wgs84X" />
+                <ScalarProperty Name="Wgs84Y" ColumnName="Wgs84Y" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RainCompletedPipeline">
+            <EntityTypeMapping TypeName="CPAMIModel.RainCompletedPipeline">
+              <MappingFragment StoreEntitySet="RainCompletedPipeline">
+                <ScalarProperty Name="coordinate" ColumnName="coordinate" />
+                <ScalarProperty Name="DS_84Y" ColumnName="DS_84Y" />
+                <ScalarProperty Name="DS_84X" ColumnName="DS_84X" />
+                <ScalarProperty Name="US_84Y" ColumnName="US_84Y" />
+                <ScalarProperty Name="US_84X" ColumnName="US_84X" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="SSEW_CAT" ColumnName="SSEW_CAT" />
+                <ScalarProperty Name="PI_NUM" ColumnName="PI_NUM" />
+                <ScalarProperty Name="US_MH" ColumnName="US_MH" />
+                <ScalarProperty Name="DS_MH" ColumnName="DS_MH" />
+                <ScalarProperty Name="PI_TYP" ColumnName="PI_TYP" />
+                <ScalarProperty Name="PI_CLASS" ColumnName="PI_CLASS" />
+                <ScalarProperty Name="PI_WIDT" ColumnName="PI_WIDT" />
+                <ScalarProperty Name="PI_WIDB" ColumnName="PI_WIDB" />
+                <ScalarProperty Name="PI_HEI" ColumnName="PI_HEI" />
+                <ScalarProperty Name="PI_LENG" ColumnName="PI_LENG" />
+                <ScalarProperty Name="PI_MAT" ColumnName="PI_MAT" />
+                <ScalarProperty Name="PI_SLOP" ColumnName="PI_SLOP" />
+                <ScalarProperty Name="DES_FLOW" ColumnName="DES_FLOW" />
+                <ScalarProperty Name="DES_VELO" ColumnName="DES_VELO" />
+                <ScalarProperty Name="US_BLE" ColumnName="US_BLE" />
+                <ScalarProperty Name="DS_BLE" ColumnName="DS_BLE" />
+                <ScalarProperty Name="CATCH_NUM" ColumnName="CATCH_NUM" />
+                <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+                <ScalarProperty Name="CONS_TIT" ColumnName="CONS_TIT" />
+                <ScalarProperty Name="CONS_DEPT" ColumnName="CONS_DEPT" />
+                <ScalarProperty Name="CONS_NAME" ColumnName="CONS_NAME" />
+                <ScalarProperty Name="CONS_DATE" ColumnName="CONS_DATE" />
+                <ScalarProperty Name="KEYIN_DATE" ColumnName="KEYIN_DATE" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="US_X" ColumnName="US_X" />
+                <ScalarProperty Name="US_Y" ColumnName="US_Y" />
+                <ScalarProperty Name="DS_X" ColumnName="DS_X" />
+                <ScalarProperty Name="DS_Y" ColumnName="DS_Y" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RainwaterDitch">
+            <EntityTypeMapping TypeName="CPAMIModel.RainwaterDitch">
+              <MappingFragment StoreEntitySet="RainwaterDitch">
+                <ScalarProperty Name="coordinate" ColumnName="coordinate" />
+                <ScalarProperty Name="END_84Y" ColumnName="END_84Y" />
+                <ScalarProperty Name="END_84X" ColumnName="END_84X" />
+                <ScalarProperty Name="STR_84Y" ColumnName="STR_84Y" />
+                <ScalarProperty Name="STR_84X" ColumnName="STR_84X" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="SPI_TYP" ColumnName="SPI_TYP" />
+                <ScalarProperty Name="SPI_NUM" ColumnName="SPI_NUM" />
+                <ScalarProperty Name="STR_X" ColumnName="STR_X" />
+                <ScalarProperty Name="STR_Y" ColumnName="STR_Y" />
+                <ScalarProperty Name="STR_LE" ColumnName="STR_LE" />
+                <ScalarProperty Name="END_X" ColumnName="END_X" />
+                <ScalarProperty Name="END_Y" ColumnName="END_Y" />
+                <ScalarProperty Name="END_LE" ColumnName="END_LE" />
+                <ScalarProperty Name="STR_DEP" ColumnName="STR_DEP" />
+                <ScalarProperty Name="END_DEP" ColumnName="END_DEP" />
+                <ScalarProperty Name="STR_WID" ColumnName="STR_WID" />
+                <ScalarProperty Name="END_WID" ColumnName="END_WID" />
+                <ScalarProperty Name="LENG" ColumnName="LENG" />
+                <ScalarProperty Name="SLOP" ColumnName="SLOP" />
+                <ScalarProperty Name="CATCH_NUM" ColumnName="CATCH_NUM" />
+                <ScalarProperty Name="KEYIN_DATE" ColumnName="KEYIN_DATE" />
+                <ScalarProperty Name="CONS_DATE" ColumnName="CONS_DATE" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SetWells">
+            <EntityTypeMapping TypeName="CPAMIModel.SetWells">
+              <MappingFragment StoreEntitySet="SetWells">
+                <ScalarProperty Name="coordinate" ColumnName="coordinate" />
+                <ScalarProperty Name="Wgs84Y" ColumnName="Wgs84Y" />
+                <ScalarProperty Name="Wgs84X" ColumnName="Wgs84X" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="targetId" ColumnName="targetId" />
+                <ScalarProperty Name="CP_NUM" ColumnName="CP_NUM" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="CP_BLE" ColumnName="CP_BLE" />
+                <ScalarProperty Name="CP_DEP" ColumnName="CP_DEP" />
+                <ScalarProperty Name="CP_LENG" ColumnName="CP_LENG" />
+                <ScalarProperty Name="CP_WID" ColumnName="CP_WID" />
+                <ScalarProperty Name="IN_CPNUM" ColumnName="IN_CPNUM" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+                <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableColumnText">
+            <EntityTypeMapping TypeName="CPAMIModel.TableColumnText">
+              <MappingFragment StoreEntitySet="TableColumnText">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ColName" ColumnName="ColName" />
+                <ScalarProperty Name="ColNameChi" ColumnName="ColNameChi" />
+                <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaiwanCode">
+            <EntityTypeMapping TypeName="CPAMIModel.TaiwanCode">
+              <MappingFragment StoreEntitySet="TaiwanCode">
+                <ScalarProperty Name="Polygon" ColumnName="Polygon" />
+                <ScalarProperty Name="WGS84_Y" ColumnName="WGS84_Y" />
+                <ScalarProperty Name="WGS84_X" ColumnName="WGS84_X" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CPAMIModelStoreContainer" CdmEntityContainer="CPAMIEntities">
+    <EntitySetMapping Name="ConnectingPipe">
+      <EntityTypeMapping TypeName="CPAMIModel.ConnectingPipe">
+        <MappingFragment StoreEntitySet="ConnectingPipe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="CPI_NUM" ColumnName="CPI_NUM" />
+          <ScalarProperty Name="IN_MHNUM" ColumnName="IN_MHNUM" />
+          <ScalarProperty Name="IN_PINUM" ColumnName="IN_PINUM" />
+          <ScalarProperty Name="CPI_WID" ColumnName="CPI_WID" />
+          <ScalarProperty Name="CPI_HEI" ColumnName="CPI_HEI" />
+          <ScalarProperty Name="CPI_LENG" ColumnName="CPI_LENG" />
+          <ScalarProperty Name="PI_MAT" ColumnName="PI_MAT" />
+          <ScalarProperty Name="US_BLE" ColumnName="US_BLE" />
+          <ScalarProperty Name="IN_TDIS" ColumnName="IN_TDIS" />
+          <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="NOTE2" ColumnName="NOTE2" />
+          <ScalarProperty Name="NOTE3" ColumnName="NOTE3" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentData">
+      <EntityTypeMapping TypeName="CPAMIModel.ContentData">
+        <MappingFragment StoreEntitySet="ContentData">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="planName" ColumnName="planName" />
+          <ScalarProperty Name="textInfo" ColumnName="textInfo" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentImg">
+      <EntityTypeMapping TypeName="CPAMIModel.ContentImg">
+        <MappingFragment StoreEntitySet="ContentImg">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="step" ColumnName="step" />
+          <ScalarProperty Name="planName" ColumnName="planName" />
+          <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIsMenu">
+      <EntityTypeMapping TypeName="CPAMIModel.GIsMenu">
+        <MappingFragment StoreEntitySet="GIsMenu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="townId" ColumnName="townId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="isShow" ColumnName="isShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PipeCableAttach">
+      <EntityTypeMapping TypeName="CPAMIModel.PipeCableAttach">
+        <MappingFragment StoreEntitySet="PipeCableAttach">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+          <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+          <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+          <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+          <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+          <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+          <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+          <ScalarProperty Name="STATEM" ColumnName="STATEM" />
+          <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+          <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+          <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+          <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+          <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PipeCross">
+      <EntityTypeMapping TypeName="CPAMIModel.PipeCross">
+        <MappingFragment StoreEntitySet="PipeCross">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+          <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+          <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+          <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+          <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+          <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+          <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+          <ScalarProperty Name="DIS_TOP" ColumnName="DIS_TOP" />
+          <ScalarProperty Name="CROSS_TP" ColumnName="CROSS_TP" />
+          <ScalarProperty Name="STATEM" ColumnName="STATEM" />
+          <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+          <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+          <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+          <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+          <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+          <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PipeOther">
+      <EntityTypeMapping TypeName="CPAMIModel.PipeOther">
+        <MappingFragment StoreEntitySet="PipeOther">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+          <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+          <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+          <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+          <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+          <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+          <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+          <ScalarProperty Name="STATEM" ColumnName="STATEM" />
+          <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+          <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+          <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+          <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+          <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+          <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PipeSilt">
+      <EntityTypeMapping TypeName="CPAMIModel.PipeSilt">
+        <MappingFragment StoreEntitySet="PipeSilt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+          <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+          <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+          <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+          <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+          <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+          <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+          <ScalarProperty Name="SEDI_DH" ColumnName="SEDI_DH" />
+          <ScalarProperty Name="FD_DEPTH" ColumnName="FD_DEPTH" />
+          <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+          <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+          <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+          <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+          <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="VIDEO" ColumnName="VIDEO" />
+          <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PipeUnableWalk">
+      <EntityTypeMapping TypeName="CPAMIModel.PipeUnableWalk">
+        <MappingFragment StoreEntitySet="PipeUnableWalk">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="P_NO" ColumnName="P_NO" />
+          <ScalarProperty Name="CHART_NO" ColumnName="CHART_NO" />
+          <ScalarProperty Name="TOWN_NAME" ColumnName="TOWN_NAME" />
+          <ScalarProperty Name="TOWN_ID" ColumnName="TOWN_ID" />
+          <ScalarProperty Name="MSHED" ColumnName="MSHED" />
+          <ScalarProperty Name="DIS_STMH" ColumnName="DIS_STMH" />
+          <ScalarProperty Name="DIS_NUM" ColumnName="DIS_NUM" />
+          <ScalarProperty Name="STATEM" ColumnName="STATEM" />
+          <ScalarProperty Name="INV_DATE" ColumnName="INV_DATE" />
+          <ScalarProperty Name="INV_GRP" ColumnName="INV_GRP" />
+          <ScalarProperty Name="DEV_OK" ColumnName="DEV_OK" />
+          <ScalarProperty Name="DEV_DATE" ColumnName="DEV_DATE" />
+          <ScalarProperty Name="DEV_GRP" ColumnName="DEV_GRP" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="MEMO" ColumnName="MEMO" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RainCompletedManhole">
+      <EntityTypeMapping TypeName="CPAMIModel.RainCompletedManhole">
+        <MappingFragment StoreEntitySet="RainCompletedManhole">
+          <ScalarProperty Name="coordinate" ColumnName="coordinate" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="MH_NUM" ColumnName="MH_NUM" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="ROAD_NAME" ColumnName="ROAD_NAME" />
+          <ScalarProperty Name="MH_DEP" ColumnName="MH_DEP" />
+          <ScalarProperty Name="MH_TYP" ColumnName="MH_TYP" />
+          <ScalarProperty Name="MH_CLASS" ColumnName="MH_CLASS" />
+          <ScalarProperty Name="MH_LENG" ColumnName="MH_LENG" />
+          <ScalarProperty Name="MH_WID" ColumnName="MH_WID" />
+          <ScalarProperty Name="ROAD_WID" ColumnName="ROAD_WID" />
+          <ScalarProperty Name="FALL_MAX" ColumnName="FALL_MAX" />
+          <ScalarProperty Name="MH_TLE" ColumnName="MH_TLE" />
+          <ScalarProperty Name="CONS_DATE" ColumnName="CONS_DATE" />
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+          <ScalarProperty Name="CONS_TIT" ColumnName="CONS_TIT" />
+          <ScalarProperty Name="CONS_DEPT" ColumnName="CONS_DEPT" />
+          <ScalarProperty Name="CONS_NAME" ColumnName="CONS_NAME" />
+          <ScalarProperty Name="KEYIN_DATE" ColumnName="KEYIN_DATE" />
+          <ScalarProperty Name="MH_PIC" ColumnName="MH_PIC" />
+          <ScalarProperty Name="MH_EXVIEW" ColumnName="MH_EXVIEW" />
+          <ScalarProperty Name="MH_MARK" ColumnName="MH_MARK" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+          <ScalarProperty Name="Wgs84X" ColumnName="Wgs84X" />
+          <ScalarProperty Name="Wgs84Y" ColumnName="Wgs84Y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RainCompletedPipeline">
+      <EntityTypeMapping TypeName="CPAMIModel.RainCompletedPipeline">
+        <MappingFragment StoreEntitySet="RainCompletedPipeline">
+          <ScalarProperty Name="coordinate" ColumnName="coordinate" />
+          <ScalarProperty Name="DS_84Y" ColumnName="DS_84Y" />
+          <ScalarProperty Name="DS_84X" ColumnName="DS_84X" />
+          <ScalarProperty Name="US_84Y" ColumnName="US_84Y" />
+          <ScalarProperty Name="US_84X" ColumnName="US_84X" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="SSEW_CAT" ColumnName="SSEW_CAT" />
+          <ScalarProperty Name="PI_NUM" ColumnName="PI_NUM" />
+          <ScalarProperty Name="US_MH" ColumnName="US_MH" />
+          <ScalarProperty Name="DS_MH" ColumnName="DS_MH" />
+          <ScalarProperty Name="PI_TYP" ColumnName="PI_TYP" />
+          <ScalarProperty Name="PI_CLASS" ColumnName="PI_CLASS" />
+          <ScalarProperty Name="PI_WIDT" ColumnName="PI_WIDT" />
+          <ScalarProperty Name="PI_WIDB" ColumnName="PI_WIDB" />
+          <ScalarProperty Name="PI_HEI" ColumnName="PI_HEI" />
+          <ScalarProperty Name="PI_LENG" ColumnName="PI_LENG" />
+          <ScalarProperty Name="PI_MAT" ColumnName="PI_MAT" />
+          <ScalarProperty Name="PI_SLOP" ColumnName="PI_SLOP" />
+          <ScalarProperty Name="DES_FLOW" ColumnName="DES_FLOW" />
+          <ScalarProperty Name="DES_VELO" ColumnName="DES_VELO" />
+          <ScalarProperty Name="US_BLE" ColumnName="US_BLE" />
+          <ScalarProperty Name="DS_BLE" ColumnName="DS_BLE" />
+          <ScalarProperty Name="CATCH_NUM" ColumnName="CATCH_NUM" />
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+          <ScalarProperty Name="CONS_TIT" ColumnName="CONS_TIT" />
+          <ScalarProperty Name="CONS_DEPT" ColumnName="CONS_DEPT" />
+          <ScalarProperty Name="CONS_NAME" ColumnName="CONS_NAME" />
+          <ScalarProperty Name="CONS_DATE" ColumnName="CONS_DATE" />
+          <ScalarProperty Name="KEYIN_DATE" ColumnName="KEYIN_DATE" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="US_X" ColumnName="US_X" />
+          <ScalarProperty Name="US_Y" ColumnName="US_Y" />
+          <ScalarProperty Name="DS_X" ColumnName="DS_X" />
+          <ScalarProperty Name="DS_Y" ColumnName="DS_Y" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RainwaterDitch">
+      <EntityTypeMapping TypeName="CPAMIModel.RainwaterDitch">
+        <MappingFragment StoreEntitySet="RainwaterDitch">
+          <ScalarProperty Name="coordinate" ColumnName="coordinate" />
+          <ScalarProperty Name="END_84Y" ColumnName="END_84Y" />
+          <ScalarProperty Name="END_84X" ColumnName="END_84X" />
+          <ScalarProperty Name="STR_84Y" ColumnName="STR_84Y" />
+          <ScalarProperty Name="STR_84X" ColumnName="STR_84X" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="SPI_TYP" ColumnName="SPI_TYP" />
+          <ScalarProperty Name="SPI_NUM" ColumnName="SPI_NUM" />
+          <ScalarProperty Name="STR_X" ColumnName="STR_X" />
+          <ScalarProperty Name="STR_Y" ColumnName="STR_Y" />
+          <ScalarProperty Name="STR_LE" ColumnName="STR_LE" />
+          <ScalarProperty Name="END_X" ColumnName="END_X" />
+          <ScalarProperty Name="END_Y" ColumnName="END_Y" />
+          <ScalarProperty Name="END_LE" ColumnName="END_LE" />
+          <ScalarProperty Name="STR_DEP" ColumnName="STR_DEP" />
+          <ScalarProperty Name="END_DEP" ColumnName="END_DEP" />
+          <ScalarProperty Name="STR_WID" ColumnName="STR_WID" />
+          <ScalarProperty Name="END_WID" ColumnName="END_WID" />
+          <ScalarProperty Name="LENG" ColumnName="LENG" />
+          <ScalarProperty Name="SLOP" ColumnName="SLOP" />
+          <ScalarProperty Name="CATCH_NUM" ColumnName="CATCH_NUM" />
+          <ScalarProperty Name="KEYIN_DATE" ColumnName="KEYIN_DATE" />
+          <ScalarProperty Name="CONS_DATE" ColumnName="CONS_DATE" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SetWells">
+      <EntityTypeMapping TypeName="CPAMIModel.SetWells">
+        <MappingFragment StoreEntitySet="SetWells">
+          <ScalarProperty Name="coordinate" ColumnName="coordinate" />
+          <ScalarProperty Name="Wgs84Y" ColumnName="Wgs84Y" />
+          <ScalarProperty Name="Wgs84X" ColumnName="Wgs84X" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="targetId" ColumnName="targetId" />
+          <ScalarProperty Name="CP_NUM" ColumnName="CP_NUM" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="CP_BLE" ColumnName="CP_BLE" />
+          <ScalarProperty Name="CP_DEP" ColumnName="CP_DEP" />
+          <ScalarProperty Name="CP_LENG" ColumnName="CP_LENG" />
+          <ScalarProperty Name="CP_WID" ColumnName="CP_WID" />
+          <ScalarProperty Name="IN_CPNUM" ColumnName="IN_CPNUM" />
+          <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableColumnText">
+      <EntityTypeMapping TypeName="CPAMIModel.TableColumnText">
+        <MappingFragment StoreEntitySet="TableColumnText">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ColName" ColumnName="ColName" />
+          <ScalarProperty Name="ColNameChi" ColumnName="ColNameChi" />
+          <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiwanCode">
+      <EntityTypeMapping TypeName="CPAMIModel.TaiwanCode">
+        <MappingFragment StoreEntitySet="TaiwanCode">
+          <ScalarProperty Name="Polygon" ColumnName="Polygon" />
+          <ScalarProperty Name="WGS84_Y" ColumnName="WGS84_Y" />
+          <ScalarProperty Name="WGS84_X" ColumnName="WGS84_X" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
